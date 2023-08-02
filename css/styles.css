@@ -203,16 +203,16 @@ h1 {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #4caf50;
+  background-color: #317231;
   border: none;
 }
 
 .button-style:hover {
-  background-color: #3e8e41;
+  background-color: #317231;
 }
 
 .button-style:active {
-  background-color: #3e8e41;
+  background-color: #317231;
   transform: translateY(4px);
 }
 
@@ -226,7 +226,7 @@ h1 {
 }
 .util-button {
   margin-top: 20px; /* Adds space at the top of the utility buttons */
-  background-color: #808080; /* Change the color to grey */
+  background-color: #6E6E6E; /* Change the color to grey */
   color: #fff; /* Change the text color to white for better visibility */
 }
 

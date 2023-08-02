@@ -154,7 +154,7 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #008cba;
+  background-color: #007EA8;
   color: white;
   border: none;
   text-align: center;
@@ -164,10 +164,10 @@ body {
   width: 80%;
 }
 #nav button:hover {
-  background-color: #4caf50;
+  background-color: #3A823C;
 }
 #nav button.current {
-  background-color: #5fb762;
+  background-color: #3A823C;
 }
 #content {
   width: 80%;

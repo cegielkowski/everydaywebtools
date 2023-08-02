@@ -24,7 +24,7 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #0077C8;
+  background-color: #008cba;
   color: white;
   border: none;
   text-align: center;
@@ -34,10 +34,10 @@ body {
   width: 80%;
 }
 #nav button:hover {
-  background-color: #398341;
+  background-color: #4caf50;
 }
 #nav button.current {
-  background-color: #398341;
+  background-color: #4caf50;
 }
 #content {
   width: 80%;
@@ -154,7 +154,7 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #007EA8;
+  background-color: #008cba;
   color: white;
   border: none;
   text-align: center;
@@ -164,10 +164,10 @@ body {
   width: 80%;
 }
 #nav button:hover {
-  background-color: #3A823C;
+  background-color: #4caf50;
 }
 #nav button.current {
-  background-color: #3A823C;
+  background-color: #4caf50;
 }
 #content {
   width: 80%;

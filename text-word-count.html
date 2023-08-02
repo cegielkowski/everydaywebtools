@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Best Word Counter in the World</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 50 50%22><text y=%2250%22 font-size=%2250%22>W</text></svg>">
+    <meta name="description" content="The best free online tool for counting words and characters in a text. Fast, accurate, and easy to use.">
+    <meta name="keywords" content="Word Counter, Online Word Counter, Free Word Counter, Best Word Counter, Character Counter, Online Character Counter, Free Character Counter, Best Character Counter">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "The Best Word Counter in the World",
+        "url": "http://www.yourwebsite.com",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All"
+    }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-29Z4MTERKS');
+    </script>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;  /* Use min-height instead of height */
+        background-color: #f0f0f0;
+        text-align: center; /* Ensures centered text on all devices */
+    }
+    #nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center; /* Center items vertically in the container */
+        gap: 20px;
+        padding: 20px;
+        width: 100%; /* Ensures full width coverage on all devices */
+    }
+    #nav button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #008CBA;  /* Light blue */
+        color: white;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.4s;  /* Adds animation */
+        width: 80%;  /* Responsive width */
+    }
+    #nav button:hover {
+        background-color: #4CAF50;  /* Green */
+    }
+    #nav button.current {
+        background-color: #5fb762;  /* Different shade of Green */
+    }
+    #content {
+        width: 80%;
+        max-width: 500px;
+    }
+    textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+    h1 {
+        text-align: center;
+        font-size: 4vw;  /* Responsive font size */
+    }
+    /* Media query for larger screens */
+    @media (min-width: 600px) {
+        #nav {
+            flex-direction: row;
+        }
+        #nav button {
+            width: 30%;  /* Adjust width for larger screens */
+        }
+        h1 {
+            font-size: 2em;  /* Adjust font size for larger screens */
+        }
+    }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <button id="word-counter" onclick="highlightCurrent(this.id)">Word Counter</button>
+        <button onclick="location.href='text-character-count.html'">Character Counter</button>
+        <!-- <button onclick="location.href='#case-converter'">Case Converter</button>
+        <button onclick="location.href='#password-generator'">Password Generator</button>
+        <button onclick="location.href='#color-palette-generator'">Color Palette Generator</button>
+        <button onclick="location.href='#url-encoder-decoder'">URL Encoder/Decoder</button>
+        <button onclick="location.href='#timestamp-converter'">Timestamp Converter</button>
+        <button onclick="location.href='#html-css-js-beautifier'">HTML/CSS/JS Beautifier</button>
+        <button onclick="location.href='#image-compressor'">Image Compressor</button>
+        <button onclick="location.href='#qr-code-generator'">QR Code Generator</button>
+        <button onclick="location.href='#lorem-ipsum-generator'">Lorem Ipsum Generator</button>
+        <button onclick="location.href='#markdown-to-html-converter'">Markdown to HTML Converter</button>
+        <button onclick="location.href='#meta-tag-generator'">Meta Tag Generator</button>     -->
+    </div>
+    <div id="content">
+        <h1>
+            The best word counter in the world
+        </h1>
+        <!-- Your AdSense Code Here -->
+        <textarea id="textArea" placeholder="Type your text here..." oninput="countWordsAndCharacters()"></textarea>
+        <p id="wordCount">Word Count: 0</p>
+    </div>
+    <script>
+        // The function to highlight the current tool
+    document.getElementById('word-counter').classList.add('current');
+        function highlightCurrent(id) {
+            var buttons = document.getElementById('nav').getElementsByTagName('button');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('current');
+                if (buttons[i].id === id) {
+                    buttons[i].classList.add('current');
+                }
+            }
+        }
+        // Automatically highlight the "Word Counter" button on page load
+        highlightCurrent('word-counter');
+        
+        function countWordsAndCharacters() {
+            var text = document.getElementById('textArea').value;
+            var words = text.trim().split(" ");
+            var wordCount = words.filter(function(word) {
+                return word != '';
+            }).length;
+            document.getElementById('wordCount').innerHTML = "Word Count: " + wordCount;
+        }
+    </script>
+</body>
+</html>

@@ -13,18 +13,6 @@
     />
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <script
-      data-cfasync="false"
-      data-color="#5F7FFF"
-      data-description="Support me on Buy me a coffee!"
-      data-id="cegielkowski"
-      data-message="Loving the tools? Buy me a coffee and fuel more cool updates. Your support keeps the digital caffeine flowing!"
-      data-name="BMC-Widget"
-      data-position="Right"
-      data-x_margin="18"
-      data-y_margin="18"
-      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-    ></script>
     <script type="application/ld+json">
       {
         "@context": "http://schema.org",
@@ -35,88 +23,13 @@
         "operatingSystem": "All"
       }
     </script>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh; /* Use min-height instead of height */
-        background-color: #f0f0f0;
-        text-align: center; /* Ensures centered text on all devices */
-      }
-      #nav {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center; /* Center items vertically in the container */
-        gap: 20px;
-        padding: 20px;
-        width: 100%; /* Ensures full width coverage on all devices */
-      }
-      #nav button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #008cba; /* Light blue */
-        color: white;
-        border: none;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        transition-duration: 0.4s; /* Adds animation */
-        width: 80%; /* Responsive width */
-      }
-      #nav button:hover {
-        background-color: #4caf50; /* Green */
-      }
-      #nav button.current {
-        background-color: #5fb762; /* Different shade of Green */
-      }
-      #content {
-        width: 80%;
-        max-width: 500px;
-      }
-      textarea {
-        width: 100%;
-        height: 200px;
-        margin-bottom: 20px;
-      }
-      h1 {
-        text-align: center;
-        font-size: 4vw; /* Responsive font size */
-      }
-      /* Media query for larger screens */
-      @media (min-width: 600px) {
-        #nav {
-          flex-direction: row;
-        }
-        #nav button {
-          width: 30%; /* Adjust width for larger screens */
-        }
-        h1 {
-          font-size: 2em; /* Adjust font size for larger screens */
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="css/styles.min.css" />
     <!-- Google tag (gtag.js) -->
     <script
       async=""
       src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
     ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-29Z4MTERKS");
-    </script>
+    <script src="js/scripts.min.js"></script>
     <title>Free Online Character Counter | Everyday Web Tools</title>
     <meta
       content="Use our free and easy online tool to count the characters in your text. Fast, accurate, and user-friendly."
@@ -183,4 +96,16 @@
       document.getElementById("character-count").classList.add("current");
     </script>
   </body>
+  <script
+    data-name="BMC-Widget"
+    data-cfasync="false"
+    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    data-id="cegielkowski"
+    data-description="Support me on Buy me a coffee!"
+    data-message="Loving the tools? Buy me a coffee and fuel more cool updates. Your support keeps the digital caffeine flowing!"
+    data-color="#5F7FFF"
+    data-position="Right"
+    data-x_margin="18"
+    data-y_margin="18"
+  ></script>
 </html>

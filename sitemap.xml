@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
       <loc>http://www.everydaywebtools.com/index.html</loc>
-      <lastmod>2023-08-02T18:30:00+00:00</lastmod>
+      <lastmod>2023-08-02T19:30:00+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>1.0</priority>
    </url>
    <url>
-      <loc>http://www.everydaywebtools.com/text-character-count.html</loc>
-      <lastmod>2023-08-02T18:30:00+00:00</lastmod>
+      <loc>http://www.everydaywebtools.com/character-count.html</loc>
+      <lastmod>2023-08-02T19:30:00+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>
    <url>
-      <loc>http://www.everydaywebtools.com/text-word-count.html</loc>
-      <lastmod>2023-08-02T18:30:00+00:00</lastmod>
+      <loc>http://www.everydaywebtools.com/word-count.html</loc>
+      <lastmod>2023-08-02T19:30:00+00:00</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.8</priority>
    </url>

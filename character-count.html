@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Best Character Counter in the World</title>
+    <link href="brain.png" rel="icon" />
+    <meta
+      content="The best free online tool for counting words and characters in a text. Fast, accurate, and easy to use."
+      name="description"
+    />
+    <meta
+      content="Character Counter, Online Character Counter, Free Character Counter, Best Character Counter, Character Counter, Online Character Counter, Free Character Counter, Best Character Counter"
+      name="keywords"
+    />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script
+      data-cfasync="false"
+      data-color="#5F7FFF"
+      data-description="Support me on Buy me a coffee!"
+      data-id="cegielkowski"
+      data-message="Loving the tools? Buy me a coffee and fuel more cool updates. Your support keeps the digital caffeine flowing!"
+      data-name="BMC-Widget"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+    ></script>
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "The Best Character Counter in the World",
+        "url": "http://www.everydaywebtools.com",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All"
+      }
+    </script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* Use min-height instead of height */
+        background-color: #f0f0f0;
+        text-align: center; /* Ensures centered text on all devices */
+      }
+      #nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center; /* Center items vertically in the container */
+        gap: 20px;
+        padding: 20px;
+        width: 100%; /* Ensures full width coverage on all devices */
+      }
+      #nav button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #008cba; /* Light blue */
+        color: white;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.4s; /* Adds animation */
+        width: 80%; /* Responsive width */
+      }
+      #nav button:hover {
+        background-color: #4caf50; /* Green */
+      }
+      #nav button.current {
+        background-color: #5fb762; /* Different shade of Green */
+      }
+      #content {
+        width: 80%;
+        max-width: 500px;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+      }
+      h1 {
+        text-align: center;
+        font-size: 4vw; /* Responsive font size */
+      }
+      /* Media query for larger screens */
+      @media (min-width: 600px) {
+        #nav {
+          flex-direction: row;
+        }
+        #nav button {
+          width: 30%; /* Adjust width for larger screens */
+        }
+        h1 {
+          font-size: 2em; /* Adjust font size for larger screens */
+        }
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-29Z4MTERKS");
+    </script>
+    <title>Free Online Character Counter | Everyday Web Tools</title>
+    <meta
+      content="Use our free and easy online tool to count the characters in your text. Fast, accurate, and user-friendly."
+      name="description"
+    />
+    <meta
+      content="character counter, online character count, free character counter, text analysis"
+      name="keywords"
+    />
+  </head>
+  <body>
+    <div id="nav">
+      <button
+        id="home"
+        class="nav-button"
+        onclick="window.location.href='index.html'"
+      >
+        Home
+      </button>
+      <button
+        class="nav-button"
+        id="character-count"
+        onclick="window.location.href='text-character-count.html'"
+      >
+        Character Counter
+      </button>
+      <button
+        class="nav-button"
+        id="word-count"
+        onclick="window.location.href='word-count.html'"
+      >
+        Word Counter
+      </button>
+      <!-- More buttons can be added here -->
+    </div>
+    <div id="content">
+      <h1>The Best Character Counter in the World</h1>
+      <!-- Your AdSense Code Here -->
+      <textarea
+        id="textArea"
+        oninput="countCharacters()"
+        placeholder="Type your text here..."
+      ></textarea>
+      <input
+        checked=""
+        id="countSpaces"
+        onchange="countCharacters()"
+        type="checkbox"
+      />
+      Count spaces
+      <p id="charCount">Character Count: 0</p>
+    </div>
+    <script>
+      function countCharacters() {
+        var text = document.getElementById("textArea").value;
+        var countSpaces = document.getElementById("countSpaces").checked;
+        var charCount = countSpaces
+          ? text.length
+          : text.replace(/\s+/g, "").length;
+        document.getElementById("charCount").innerHTML =
+          "Character Count: " + charCount;
+      }
+
+      document.getElementById("character-count").classList.add("current");
+    </script>
+  </body>
+</html>

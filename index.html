@@ -1,115 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <title>
-   Your Everday Online Toolbox | Free Online Tools
-  </title>
-  <link rel="icon" href="brain.png">
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <style>
-   body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;  /* Use min-height instead of height */
-            background-color: #f0f0f0;
-            text-align: center; /* Ensures centered text on all devices */
-        }
+  <head>
+    <title>Your Everday Online Toolbox | Free Online Tools</title>
+    <link rel="icon" href="brain.png" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* Use min-height instead of height */
+        background-color: #f0f0f0;
+        text-align: center; /* Ensures centered text on all devices */
+      }
+      #nav {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center; /* Center items vertically in the container */
+        gap: 20px;
+        padding: 20px;
+        width: 100%; /* Ensures full width coverage on all devices */
+      }
+      #nav button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #008cba; /* Light blue */
+        color: white;
+        border: none;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.4s; /* Adds animation */
+        width: 80%; /* Responsive width */
+      }
+      /* Change background color of buttons when hovered over */
+      #nav button:hover {
+        background-color: #4caf50; /* Green */
+        color: white;
+      }
+      #title {
+        text-align: center;
+        font-size: 4vw; /* Responsive font size */
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      /* Media query for larger screens */
+      @media (min-width: 600px) {
         #nav {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center; /* Center items vertically in the container */
-            gap: 20px;
-            padding: 20px;
-            width: 100%; /* Ensures full width coverage on all devices */
+          flex-direction: row;
         }
         #nav button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #008CBA;  /* Light blue */
-            color: white;
-            border: none;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            transition-duration: 0.4s;  /* Adds animation */
-            width: 80%;  /* Responsive width */
-        }
-        /* Change background color of buttons when hovered over */
-        #nav button:hover {
-            background-color: #4CAF50;  /* Green */
-            color: white;
+          width: 30%; /* Adjust width for larger screens */
         }
         #title {
-            text-align: center;
-            font-size: 4vw;  /* Responsive font size */
-            font-weight: bold;
-            margin-bottom: 20px;
+          font-size: 2em; /* Adjust font size for larger screens */
         }
-        /* Media query for larger screens */
-        @media (min-width: 600px) {
-            #nav {
-                flex-direction: row;
-            }
-            #nav button {
-                width: 30%;  /* Adjust width for larger screens */
-            }
-            #title {
-                font-size: 2em;  /* Adjust font size for larger screens */
-            }
-        }
-  </style>
-  <!-- Google tag (gtag.js) -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS">
-  </script>
-  <script>
-   window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-29Z4MTERKS');
-  </script>
-<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="cegielkowski" data-description="Support me on Buy me a coffee!" data-message="Loving the tools? Buy me a coffee and fuel more cool updates. Your support keeps the digital caffeine flowing!" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script> </head>
- <body>
-  <main style="
-    width: 80%;
-    margin: auto;
-    padding: 20px 0;
-">
-   <header style="
-    padding: 20px 0;
-">
-    <h1>
-     Welcome to Your Ultimate Online Toolbox
-    </h1>
-    <p>
-     We provide a wide range of free, easy-to-use online tools to cater to all your needs. Whether you need to count words or characters in a text, we have got you covered. Our tools are fast, accurate, and user-friendly.
-    </p>
-   </header>
-   <div id="nav">
-    <button onclick="location.href='text-word-count.html'">
-     Word Counter
-    </button>
-    <button onclick="location.href='text-character-count.html'">
-     Character Counter
-    </button>
-    <!-- Add more buttons here -->
-   </div>
-  </main>
-  <footer style="
-    padding: 20px 0;
-">
-   <p>
-    Copyright © 2023 Your Everday Online Toolbox. All rights reserved.
-   </p>
-  </footer>
- </body>
+      gtag("config", "G-29Z4MTERKS");
+    </script>
+    <script
+      data-name="BMC-Widget"
+      data-cfasync="false"
+      src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+      data-id="cegielkowski"
+      data-description="Support me on Buy me a coffee!"
+      data-message="Loving the tools? Buy me a coffee and fuel more cool updates. Your support keeps the digital caffeine flowing!"
+      data-color="#5F7FFF"
+      data-position="Right"
+      data-x_margin="18"
+      data-y_margin="18"
+    ></script>
+  </head>
+  <body>
+    <main style="width: 80%; margin: auto; padding: 20px 0">
+      <header style="padding: 20px 0">
+        <h1>Welcome to Your Ultimate Online Toolbox</h1>
+        <p>
+          We provide a wide range of free, easy-to-use online tools to cater to
+          all your needs. Whether you need to count words or characters in a
+          text, we have got you covered. Our tools are fast, accurate, and
+          user-friendly.
+        </p>
+      </header>
+      <div id="nav">
+        <button
+          id="home"
+          style="background-color: #5fb762"
+          class="nav-button"
+          onclick="window.location.href='index.html'"
+        >
+          Home
+        </button>
+        <button onclick="window.location.href='word-count.html'">
+          Word Counter
+        </button>
+        <button onclick="window.location.href='character-count.html'">
+          Character Counter
+        </button>
+        <!-- Add more buttons here -->
+      </div>
+    </main>
+    <footer style="padding: 20px 0">
+      <p>Copyright © 2023 Your Everday Online Toolbox. All rights reserved.</p>
+    </footer>
+  </body>
 </html>

@@ -24,8 +24,8 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #00779E;
-  color: white;
+  background-color: #00779e;
+  color: #fff;
   border: none;
   text-align: center;
   text-decoration: none;
@@ -95,8 +95,8 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #00779E;
-  color: #FFFFFF;
+  background-color: #00779e;
+  color: #fff;
   border: none;
   text-align: center;
   text-decoration: none;
@@ -106,7 +106,7 @@ body {
 }
 #nav button:hover {
   background-color: #317231;
-  color: #FFFFFF;
+  color: #fff;
 }
 #title {
   text-align: center;
@@ -154,8 +154,8 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #00779E;
-  color: #FFFFFF;
+  background-color: #00779e;
+  color: #fff;
   border: none;
   text-align: center;
   text-decoration: none;
@@ -192,4 +192,84 @@ h1 {
   h1 {
     font-size: 2em;
   }
+}
+
+.button-style {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4caf50;
+  border: none;
+}
+
+.button-style:hover {
+  background-color: #3e8e41;
+}
+
+.button-style:active {
+  background-color: #3e8e41;
+  transform: translateY(4px);
+}
+
+#nav button {
+  margin-right: 5px;
+}
+
+#content button {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.util-button {
+  margin-top: 20px; /* Adds space at the top of the utility buttons */
+  background-color: #808080; /* Change the color to grey */
+  color: #fff; /* Change the text color to white for better visibility */
+}
+
+.buttons-container,
+.util-buttons-container {
+  display: flex;
+  justify-content: space-between; /* Distributes the buttons evenly across the width */
+}
+
+.buttons-container .button-style,
+.util-buttons-container .util-button {
+  flex: 1; /* Makes each button take up an equal amount of space */
+  margin: 0 10px; /* Adds some space between the buttons */
+  text-align: center; /* Centers the text within the buttons */
+}
+
+/* You can adjust the first and last button margins to align perfectly with the textarea */
+.buttons-container .button-style:first-child,
+.util-buttons-container .util-button:first-child {
+  margin-left: 0;
+}
+
+.buttons-container .button-style:last-child,
+.util-buttons-container .util-button:last-child {
+  margin-right: 0;
+}
+
+.buttons-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.buttons-container .button-style {
+  flex: 1;
+  margin: 0 10px;
+  text-align: center;
+}
+
+.buttons-container .button-style:first-child {
+  margin-left: 0;
+}
+
+.buttons-container .button-style:last-child {
+  margin-right: 0;
 }

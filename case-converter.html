@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Best Case Converter in the World</title>
+    <link href="brain.png" rel="icon" />
+    <meta
+      name="description"
+      content="Use our free online tool for converting text cases. It's fast, free, accurate, and easy to use."
+    />
+    <meta
+      name="keywords"
+      content="Case Converter, Online Case Converter, Free Case Converter, Best Case Converter"
+    />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "The Best Case Converter in the World",
+        "url": "http://www.everydaywebtools.com",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All"
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
+    ></script>
+    <script src="js/scripts.min.js"></script>
+    <link rel="stylesheet" href="css/styles.min.css" />
+  </head>
+  <body>
+    <div id="nav">
+      <button
+        id="home"
+        class="nav-button"
+        onclick="window.location.href='index.html'"
+      >
+        Home
+      </button>
+      <button onclick="location.href='word-count.html'">Word Counter</button>
+      <button onclick="location.href='character-count.html'">
+        Character Counter
+      </button>
+      <button id="case-converter" onclick="highlightCurrent(this.id)">
+        Case Converter
+      </button>
+    </div>
+    <div id="content" style="max-width: 775px;">
+      <h1>The Best Case Converter in the World</h1>
+      <textarea id="textArea" placeholder="Type your text here..."></textarea>
+      <div class="buttons-container">
+        <button class="button-style" onclick="toSentence()">
+          Sentence Case
+        </button>
+        <button class="button-style" onclick="toLower()">Lower Case</button>
+        <button class="button-style" onclick="toUpper()">Upper Case</button>
+        <button class="button-style" onclick="toCapitalized()">
+          Capitalized Case
+        </button>
+        <button class="button-style" onclick="toAlternating()">
+          Alternating Case
+        </button>
+        <button class="button-style" onclick="toTitle()">Title Case</button>
+        <button class="button-style" onclick="toInverse()">Inverse Case</button>
+      </div>
+
+      <div class="util-buttons-container">
+        <button class="button-style util-button" onclick="downloadText()">
+          Download Text
+        </button>
+        <button class="button-style util-button" onclick="copyText()">
+          Copy to Clipboard
+        </button>
+        <button class="button-style util-button" onclick="clearText()">
+          Clear
+        </button>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("case-converter").classList.add("current");
+      function highlightCurrent(id) {
+        var buttons = document
+          .getElementById("nav")
+          .getElementsByTagName("button");
+        for (var i = 0; i < buttons.length; i++) {
+          buttons[i].classList.remove("current");
+          if (buttons[i].id === id) {
+            buttons[i].classList.add("current");
+          }
+        }
+      }
+      highlightCurrent("case-converter");
+
+      function toLower() {
+        var text = document.getElementById("textArea").value;
+        document.getElementById("textArea").value = text.toLowerCase();
+      }
+
+      function toUpper() {
+        var text = document.getElementById("textArea").value;
+        document.getElementById("textArea").value = text.toUpperCase();
+      }
+
+      function toTitle() {
+        var text = document.getElementById("textArea").value;
+        var words = text.split(" ");
+        for (var i = 0; i < words.length; i++) {
+          words[i] =
+            words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+        }
+        document.getElementById("textArea").value = words.join(" ");
+      }
+
+      function toSentence() {
+        var text = document.getElementById("textArea").value;
+        var sentence =
+          text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+        document.getElementById("textArea").value = sentence;
+      }
+
+      function toCapitalized() {
+        var text = document.getElementById("textArea").value;
+        var words = text.split(" ");
+        for (var i = 0; i < words.length; i++) {
+          words[i] =
+            words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+        }
+        document.getElementById("textArea").value = words.join(" ");
+      }
+
+      function toAlternating() {
+        var text = document.getElementById("textArea").value;
+        var alternating = "";
+        for (var i = 0; i < text.length; i++) {
+          if (i % 2 == 0) {
+            alternating += text.charAt(i).toLowerCase();
+          } else {
+            alternating += text.charAt(i).toUpperCase();
+          }
+        }
+        document.getElementById("textArea").value = alternating;
+      }
+
+      function toInverse() {
+        var text = document.getElementById("textArea").value;
+        var inverse = "";
+        for (var i = 0; i < text.length; i++) {
+          if (text.charAt(i) === text.charAt(i).toLowerCase()) {
+            inverse += text.charAt(i).toUpperCase();
+          } else {
+            inverse += text.charAt(i).toLowerCase();
+          }
+        }
+        document.getElementById("textArea").value = inverse;
+      }
+
+      function copyText() {
+        var text = document.getElementById("textArea");
+        text.select();
+        document.execCommand("copy");
+      }
+
+      function clearText() {
+        document.getElementById("textArea").value = "";
+      }
+
+      function downloadText() {
+        var text = document.getElementById("textArea").value;
+        var element = document.createElement("a");
+        element.setAttribute(
+          "href",
+          "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+        );
+        element.setAttribute("download", "text.txt");
+        element.style.display = "none";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      }
+    </script>
+  </body>
+</html>

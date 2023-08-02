@@ -96,17 +96,13 @@
       document.getElementById("character-count").classList.add("current");
     </script>
   </body>
-  <script
-    data-name="BMC-Widget"
-    data-cfasync="false"
-    src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
-    data-id="cegielkowski"
-    data-description="Support me on Buy me a coffee!"
-    data-message="Loving the tools? Buy me a coffee and fuel more cool updates. Your support keeps the digital caffeine flowing!"
-    data-color="#5F7FFF"
-    data-position="Right"
-    data-x_margin="18"
-    data-y_margin="18"
-    defer
-  ></script>
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('cegielkowski', {
+      'type': 'floating-chat',
+      'floating-chat.donateButton.text': 'Support me',
+      'floating-chat.donateButton.background-color': '#00b9fe',
+      'floating-chat.donateButton.text-color': '#fff'
+    });
+  </script>
 </html>

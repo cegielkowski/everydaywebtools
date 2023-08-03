@@ -2,16 +2,16 @@
 <html lang="en">
   <head>
     <title>
-      Free Online Case Converter - Sentence, Title, Upper, Lower & More
+      Free Online Text Encrypt and Decrypt - Secure Your Text Online
     </title>
     <link href="../brain.png" rel="icon" />
     <meta
       name="description"
-      content="Use our free online case converter to convert text to sentence case, title case, upper case, lower case, and more. You can also download the text, copy it to the clipboard, or clear all text with a single click."
+      content="Use our free online tool to encrypt your text with a secret key or decrypt it. Secure your text with AES encryption."
     />
     <meta
       name="keywords"
-      content="Case Converter, Online Case Converter, Free Case Converter, Best Case Converter"
+      content="Text Encryption, Text Decryption, Online Encryption, Online Decryption, Free Encryption Tool, Free Decryption Tool, Secure Text Online"
     />
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -19,17 +19,17 @@
       {
         "@context": "http://schema.org",
         "@type": "WebApplication",
-        "name": "The Best Case Converter in the World",
-        "url": "https://www.everydaywebtools.com/case-converter",
+        "name": "Free Online Text Encrypt and Decrypt Tool",
+        "url": "https://www.everydaywebtools.com/encrypt-decrypt",
         "applicationCategory": "Utility",
         "operatingSystem": "All"
       }
     </script>
-    <!-- Google tag (gtag.js) -->
     <script
       async=""
       src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <link href="../css/styles.min.css" rel="stylesheet" />
   </head>
   <body>
@@ -46,25 +46,28 @@
       >
         Character Counter
       </button>
-      <button id="case-converter" onclick="highlightCurrent(this.id)">
+      <button id="case-converter" onclick="location.href='/character-counter'">
         Case Converter
       </button>
-      <button id="encrypt-decrypt" onclick="location.href='/encrypt-decrypt'">
+      <button id="encrypt-decrypt" onclick="highlightCurrent(this.id)">
         Text Encrypt/Decrypt
       </button>
     </div>
     <div id="content" style="max-width: 775px">
-      <h1>The Best Case Converter in the World</h1>
+      <h1>Free Online Text Encryption and Decryption</h1>
       <textarea id="textArea" placeholder="Type your text here..."></textarea>
+      <label for="secretKey"
+        >Secret Key (Save this! You'll need it to decrypt your text.)</label
+      >
+      <input
+        type="text"
+        id="secretKey"
+        placeholder="Enter secret key (optional)"
+        style="width: 100%; margin-bottom: 10px"
+      />
       <div class="buttons-container">
-        <button class="button-style" onclick="toUpper()">Upper</button>
-        <button class="button-style" onclick="toLower()">Lower</button>
-        <button class="button-style" onclick="toInverse()">Inverse</button>
-        <button class="button-style" onclick="toSentence()">Sentence</button>
-        <button class="button-style" onclick="toAlternating()">
-          Alternating
-        </button>
-        <button class="button-style" onclick="toTitle()">Title</button>
+        <button class="button-style" onclick="encryptText()">Encrypt</button>
+        <button class="button-style" onclick="decryptText()">Decrypt</button>
       </div>
 
       <div class="util-buttons-container">
@@ -90,7 +93,8 @@
     </footer>
 
     <script>
-      document.getElementById("case-converter").classList.add("current");
+      document.getElementById("encrypt-decrypt").classList.add("current");
+
       function highlightCurrent(id) {
         var buttons = document
           .getElementById("nav")
@@ -102,60 +106,8 @@
           }
         }
       }
-      highlightCurrent("case-converter");
 
-      function toLower() {
-        var text = document.getElementById("textArea").value;
-        document.getElementById("textArea").value = text.toLowerCase();
-      }
-
-      function toUpper() {
-        var text = document.getElementById("textArea").value;
-        document.getElementById("textArea").value = text.toUpperCase();
-      }
-
-      function toTitle() {
-        var text = document.getElementById("textArea").value;
-        var words = text.split(" ");
-        for (var i = 0; i < words.length; i++) {
-          words[i] =
-            words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
-        }
-        document.getElementById("textArea").value = words.join(" ");
-      }
-
-      function toSentence() {
-        var text = document.getElementById("textArea").value;
-        var sentence =
-          text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
-        document.getElementById("textArea").value = sentence;
-      }
-
-      function toAlternating() {
-        var text = document.getElementById("textArea").value;
-        var alternating = "";
-        for (var i = 0; i < text.length; i++) {
-          if (i % 2 == 0) {
-            alternating += text.charAt(i).toLowerCase();
-          } else {
-            alternating += text.charAt(i).toUpperCase();
-          }
-        }
-        document.getElementById("textArea").value = alternating;
-      }
-
-      function toInverse() {
-        var text = document.getElementById("textArea").value;
-        var inverse = "";
-        for (var i = 0; i < text.length; i++) {
-          if (text.charAt(i) === text.charAt(i).toLowerCase()) {
-            inverse += text.charAt(i).toUpperCase();
-          } else {
-            inverse += text.charAt(i).toLowerCase();
-          }
-        }
-        document.getElementById("textArea").value = inverse;
-      }
+      highlightCurrent("encrypt-decrypt");
 
       function copyText() {
         var text = document.getElementById("textArea");
@@ -180,6 +132,29 @@
         element.click();
         document.body.removeChild(element);
       }
+
+      function encryptText() {
+        var text = document.getElementById("textArea").value;
+        var secretKey = document.getElementById("secretKey").value;
+        if (secretKey === "") {
+          secretKey =
+            Math.random().toString(36).substring(2, 15) +
+            Math.random().toString(36).substring(2, 15);
+          document.getElementById("secretKey").value = secretKey;
+        }
+        var encrypted = CryptoJS.AES.encrypt(text, secretKey).toString();
+        document.getElementById("textArea").value = encrypted;
+      }
+
+      function decryptText() {
+        var text = document.getElementById("textArea").value;
+        var secretKey = document.getElementById("secretKey").value;
+        var decrypted = CryptoJS.AES.decrypt(text, secretKey).toString(
+          CryptoJS.enc.Utf8
+        );
+        document.getElementById("textArea").value = decrypted;
+      }
+
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);

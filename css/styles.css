@@ -10,6 +10,18 @@ body {
   background-color: #f0f0f0;
   text-align: center;
 }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
 #nav {
   display: flex;
   flex-direction: column;
@@ -226,7 +238,7 @@ h1 {
 }
 .util-button {
   margin-top: 20px; /* Adds space at the top of the utility buttons */
-  background-color: #6E6E6E; /* Change the color to grey */
+  background-color: #6e6e6e; /* Change the color to grey */
   color: #fff; /* Change the text color to white for better visibility */
 }
 

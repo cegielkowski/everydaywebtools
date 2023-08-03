@@ -1,15 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
-    <title>The Best Character Counter in the World</title>
-    <link href="brain.png" rel="icon" />
+    <title>
+      Fast &amp; Free Online Character Counter - Count Spaces Optionally
+    </title>
+    <link href="../brain.png" rel="icon" />
     <meta
+      content="Use our free and easy online tool to count characters in your text. Choose to count spaces or not. It's fast, accurate, and user-friendly."
       name="description"
-      content="Use our free online tool for counting characters in a text. It's fast, free, accurate, and easy to use."
     />
     <meta
-      name="keywords"
       content="Character Counter, Online Character Counter, Free Character Counter, Best Character Counter"
+      name="keywords"
     />
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -18,53 +21,41 @@
         "@context": "http://schema.org",
         "@type": "WebApplication",
         "name": "The Best Character Counter in the World",
-        "url": "http://www.everydaywebtools.com",
+        "url": "https://www.everydaywebtools.com/character-counter",
         "applicationCategory": "Utility",
         "operatingSystem": "All"
       }
     </script>
-    <link rel="stylesheet" href="css/styles.min.css" />
+    <link href="../css/styles.min.css" rel="stylesheet" />
     <!-- Google tag (gtag.js) -->
     <script
       async=""
       src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
     ></script>
     <title>Free Online Character Counter | Everyday Web Tools</title>
-    <meta
-      content="Use our free and easy online tool to count the characters in your text. Fast, accurate, and user-friendly."
-      name="description"
-    />
-    <meta
-      content="character counter, online character count, free character counter, text analysis"
-      name="keywords"
-    />
   </head>
   <body>
     <div id="nav">
-      <button
-        id="home"
-        class="nav-button"
-        onclick="window.location.href='index.html'"
-      >
+      <button class="nav-button" id="home" onclick="window.location.href='/'">
         Home
       </button>
       <button
         class="nav-button"
-        id="character-count"
-        onclick="window.location.href='character-count.html'"
-      >
-        Character Counter
-      </button>
-      <button
-        class="nav-button"
-        id="word-count"
-        onclick="window.location.href='word-count.html'"
+        id="word-counter"
+        onclick="window.location.href='/word-counter'"
       >
         Word Counter
       </button>
       <button
+        class="nav-button"
+        id="character-count"
+        onclick="highlightCurrent(this.id)"
+      >
+        > Character Counter
+      </button>
+      <button
         id="case-converter"
-        onclick="window.location.href='case-converter.html'"
+        onclick="window.location.href='/case-converter'"
       >
         Case Converter
       </button>
@@ -87,6 +78,14 @@
       <label for="countSpaces">Count spaces</label>
       <p id="charCount">Character Count: 0</p>
     </div>
+    <footer>
+      <p>
+        Copyright © 2023 Sauvage Development LLC. All rights reserved |
+        <a href="/terms-of-service">Terms of Service</a> |
+        <a href="/privacy-policy">Privacy Policy</a> |
+        <a href="/sitemap.xml">Site Map</a>
+      </p>
+    </footer>
     <script>
       function countCharacters() {
         var text = document.getElementById("textArea").value;

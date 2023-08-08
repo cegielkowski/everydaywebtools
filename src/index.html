@@ -13,7 +13,7 @@
       name="keywords"
       content="Online Tools, Free Tools, Word Counter, Character Counter"
     />
-    <link rel="stylesheet" href="css/styles.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <!-- Google tag (gtag.js) -->
     <script
       async=""
@@ -31,22 +31,10 @@
           user-friendly.
         </p>
       </header>
-      <div id="nav">
-        <a href="/" id="home" class="nav-button">Home</a>
-        <a href="/word-counter"  id="word-counter" class="nav-button">Word Counter</a>
-        <a href="/character-counter" id="character-counter" class="nav-button">Character Counter</a>
-        <a href="/case-converter" id="case-converter" class="nav-button" id="case-converter">Case Converter</a>
-        <a href="/encrypt-decrypt" id="encrypt-decrypt" class="nav-button" id="encrypt-decrypt">Text Encrypt/Decrypt</a>
-      </div>
+      @@include('./components/nav.html')
     </main>
-    <footer>
-      <p>
-        Copyright © 2023 Sauvage Development LLC. All rights reserved |
-        <a href="/terms-of-service">Terms of Service</a> |
-        <a href="/privacy-policy">Privacy Policy</a> |
-        <a href="/sitemap.xml">Site Map</a>
-      </p>
-    </footer>
+    @@include('./components/footer.html')
+
     <script>
       document.getElementById("home").classList.add("current");
 

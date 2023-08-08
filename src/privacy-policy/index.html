@@ -14,7 +14,7 @@
       content="Online Tools, Free Tools, Word Counter, Character Counter"
       name="keywords"
     />
-    <link href="../css/styles.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
     <!-- Google tag (gtag.js) -->
     <script
       async=""
@@ -32,13 +32,8 @@
           user-friendly.
         </p>
       </header>
-      <div id="nav">
-        <a href="/" id="home" class="nav-button">Home</a>
-        <a href="/word-counter"  id="word-counter" class="nav-button">Word Counter</a>
-        <a href="/character-counter" id="character-counter" class="nav-button">Character Counter</a>
-        <a href="/case-converter" id="case-converter" class="nav-button" id="case-converter">Case Converter</a>
-        <a href="/encrypt-decrypt" id="encrypt-decrypt" class="nav-button" id="encrypt-decrypt">Text Encrypt/Decrypt</a>
-      </div>
+      @@include('../components/nav.html')
+
     </main>
     <div style="width: 80%">
       <h2>Privacy Policy</h2>
@@ -85,14 +80,8 @@
       </p>
       <p>This policy is effective as of 3 August 2023.</p>
     </div>
-    <footer>
-      <p>
-        Copyright © 2023 Sauvage Development LLC. All rights reserved |
-        <a href="/terms-of-service">Terms of Service</a> |
-        <a href="/privacy-policy">Privacy Policy</a> |
-        <a href="/sitemap.xml">Site Map</a>
-      </p>
-    </footer>
+    @@include('../components/footer.html')
+
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {

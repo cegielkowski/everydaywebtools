@@ -30,16 +30,10 @@
       async=""
       src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
     ></script>
-    <link href="../css/styles.min.css" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
   </head>
   <body>
-    <div id="nav">
-      <a href="/" id="home" class="nav-button">Home</a>
-      <a href="/word-counter"  id="word-counter" class="nav-button">Word Counter</a>
-      <a href="/character-counter" id="character-counter" class="nav-button">Character Counter</a>
-      <a href="/case-converter" id="case-converter" class="nav-button" id="case-converter">Case Converter</a>
-      <a href="/encrypt-decrypt" id="encrypt-decrypt" class="nav-button" id="encrypt-decrypt">Text Encrypt/Decrypt</a>
-    </div>
+    @@include('../components/nav.html')
     <div id="content" style="max-width: 775px">
       <h1>The Best Case Converter in the World</h1>
       <textarea id="textArea" placeholder="Type your text here..."></textarea>
@@ -67,14 +61,8 @@
       </div>
     </div>
 
-    <footer>
-      <p>
-        Copyright © 2023 Sauvage Development LLC. All rights reserved |
-        <a href="/terms-of-service">Terms of Service</a> |
-        <a href="/privacy-policy">Privacy Policy</a> |
-        <a href="/sitemap.xml">Site Map</a>
-      </p>
-    </footer>
+    @@include('../components/footer.html')
+
 
     <script>
       document.getElementById("case-converter").classList.add("current");

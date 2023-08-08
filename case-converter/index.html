@@ -1,0 +1,92 @@
+<!DOCTYPE html><html lang="en"><head><title>Free Online Case Converter - Sentence, Title, Upper, Lower &amp; More</title><link href="../brain.png" rel="icon"><meta name="description" content="Use our free online case converter to convert text to sentence case, title case, upper case, lower case, and more. You can also download the text, copy it to the clipboard, or clear all text with a single click."><meta name="keywords" content="Case Converter, Online Case Converter, Free Case Converter, Best Case Converter"><meta charset="utf-8"><meta content="width=device-width,initial-scale=1" name="viewport"><style>footer{padding:20px 0;text-align:center;display:flex;flex-direction:column;align-items:center}a{text-decoration:none}@media (min-width:600px){#nav{flex-direction:row}}body{font-family:Arial,sans-serif;margin:0;padding:0;min-height:100vh;background-color:#f0f0f0;text-align:center}#nav,body{display:flex;flex-direction:column;align-items:center;justify-content:center}#nav{flex-wrap:wrap;gap:20px;padding:20px;width:100%}*{box-sizing:border-box}#content{width:80%;max-width:500px}textarea{width:100%;height:200px;margin-bottom:20px}h1{text-align:center;font-size:4vw}@media (min-width:600px){#nav{flex-direction:row}h1{font-size:2em}}.button-style{display:inline-block;padding:10px 20px;font-size:16px;text-align:center;text-decoration:none;outline:0;color:#fff;border:none}.button-style{background-color:#317231}#content button{margin-right:5px}#content button{margin-top:10px}.util-button{margin-top:20px;background-color:#6e6e6e;color:#fff}.buttons-container,.util-buttons-container{display:flex;justify-content:space-between}.buttons-container .button-style,.util-buttons-container .util-button{flex:1;margin:0 10px;text-align:center}.buttons-container .button-style:first-child,.util-buttons-container .util-button:first-child{margin-left:0}.buttons-container .button-style:last-child,.util-buttons-container .util-button:last-child{margin-right:0}.buttons-container{display:flex;flex-wrap:wrap;justify-content:space-between}.buttons-container .button-style{flex:1;margin:0 10px;text-align:center}.buttons-container .button-style:first-child{margin-left:0}.buttons-container .button-style:last-child{margin-right:0}.nav-button{padding:10px 20px;font-size:16px;background-color:#00779e;color:#fff;border:none;text-align:center;text-decoration:none;display:inline-block;width:80%}@media (min-width:600px){.nav-button{width:30%}}</style><script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "WebApplication",
+        "name": "The Best Case Converter in the World",
+        "url": "https://www.everydaywebtools.com/case-converter",
+        "applicationCategory": "Utility",
+        "operatingSystem": "All"
+      }</script><!-- Google tag (gtag.js) --><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"></script><link href="../css/styles.css?t=1691505099031" rel="stylesheet" media="print" onload="this.media='all'"></head><body><div id="nav"><a href="/" id="home" class="nav-button">Home</a> <a href="/word-counter" id="word-counter" class="nav-button">Word Counter</a> <a href="/character-counter" id="character-counter" class="nav-button">Character Counter</a> <a href="/case-converter" id="case-converter" class="nav-button" id="case-converter">Case Converter</a> <a href="/encrypt-decrypt" id="encrypt-decrypt" class="nav-button" id="encrypt-decrypt">Text Encrypt/Decrypt</a></div><div id="content" style="max-width: 775px"><h1>The Best Case Converter in the World</h1><textarea id="textArea" placeholder="Type your text here..."></textarea><div class="buttons-container"><button class="button-style" onclick="toUpper()">Upper</button> <button class="button-style" onclick="toLower()">Lower</button> <button class="button-style" onclick="toInverse()">Inverse</button> <button class="button-style" onclick="toSentence()">Sentence</button> <button class="button-style" onclick="toAlternating()">Alternating</button> <button class="button-style" onclick="toTitle()">Title</button></div><div class="util-buttons-container"><button class="button-style util-button" onclick="downloadText()">Download Text</button> <button class="button-style util-button" onclick="copyText()">Copy to Clipboard</button> <button class="button-style util-button" onclick="clearText()">Clear</button></div></div><footer><p>Copyright © 2023 Sauvage Development LLC. All rights reserved | <a href="/terms-of-service">Terms of Service</a> | <a href="/privacy-policy">Privacy Policy</a> | <a href="/sitemap.xml">Site Map</a></p></footer><script>document.getElementById("case-converter").classList.add("current");
+
+      function toLower() {
+        var text = document.getElementById("textArea").value;
+        document.getElementById("textArea").value = text.toLowerCase();
+      }
+
+      function toUpper() {
+        var text = document.getElementById("textArea").value;
+        document.getElementById("textArea").value = text.toUpperCase();
+      }
+
+      function toTitle() {
+        var text = document.getElementById("textArea").value;
+        var words = text.split(" ");
+        for (var i = 0; i < words.length; i++) {
+          words[i] =
+            words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+        }
+        document.getElementById("textArea").value = words.join(" ");
+      }
+
+      function toSentence() {
+        var text = document.getElementById("textArea").value;
+        var sentence =
+          text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+        document.getElementById("textArea").value = sentence;
+      }
+
+      function toAlternating() {
+        var text = document.getElementById("textArea").value;
+        var alternating = "";
+        for (var i = 0; i < text.length; i++) {
+          if (i % 2 == 0) {
+            alternating += text.charAt(i).toLowerCase();
+          } else {
+            alternating += text.charAt(i).toUpperCase();
+          }
+        }
+        document.getElementById("textArea").value = alternating;
+      }
+
+      function toInverse() {
+        var text = document.getElementById("textArea").value;
+        var inverse = "";
+        for (var i = 0; i < text.length; i++) {
+          if (text.charAt(i) === text.charAt(i).toLowerCase()) {
+            inverse += text.charAt(i).toUpperCase();
+          } else {
+            inverse += text.charAt(i).toLowerCase();
+          }
+        }
+        document.getElementById("textArea").value = inverse;
+      }
+
+      function copyText() {
+        var text = document.getElementById("textArea");
+        text.select();
+        document.execCommand("copy");
+      }
+
+      function clearText() {
+        document.getElementById("textArea").value = "";
+      }
+
+      function downloadText() {
+        var text = document.getElementById("textArea").value;
+        var element = document.createElement("a");
+        element.setAttribute(
+          "href",
+          "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+        );
+        element.setAttribute("download", "text.txt");
+        element.style.display = "none";
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+      }
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-29Z4MTERKS");</script></body></html>

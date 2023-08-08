@@ -27,11 +27,7 @@
       }
     </script>
     <link href="../css/styles.css" rel="stylesheet" />
-    <!-- Google tag (gtag.js) -->
-    <script
-      async=""
-      src="https://www.googletagmanager.com/gtag/js?id=G-29Z4MTERKS"
-    ></script>
+    @@include('../components/gtag.html')
     <title>Free Online Character Counter | Everyday Web Tools</title>
   </head>
   <body>
@@ -69,13 +65,7 @@
           "Character Count: " + charCount;
       }
 
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-29Z4MTERKS");
+      
     </script>
   </body>
 </html>

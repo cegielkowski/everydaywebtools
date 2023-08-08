@@ -34,24 +34,11 @@
   </head>
   <body>
     <div id="nav">
-      <button id="home" class="nav-button" onclick="window.location.href='/'">
-        Home
-      </button>
-      <button id="word-counter" onclick="location.href='/word-counter'">
-        Word Counter
-      </button>
-      <button
-        id="character-counter"
-        onclick="location.href='/character-counter'"
-      >
-        Character Counter
-      </button>
-      <button id="case-converter" onclick="location.href='/character-counter'">
-        Case Converter
-      </button>
-      <button id="encrypt-decrypt" onclick="highlightCurrent(this.id)">
-        Text Encrypt/Decrypt
-      </button>
+      <a href="/" id="home" class="nav-button">Home</a>
+      <a href="/word-counter"  id="word-counter" class="nav-button">Word Counter</a>
+      <a href="/character-counter" id="character-counter" class="nav-button">Character Counter</a>
+      <a href="/case-converter" id="case-converter" class="nav-button" id="case-converter">Case Converter</a>
+      <a href="/encrypt-decrypt" id="encrypt-decrypt" class="nav-button" id="encrypt-decrypt">Text Encrypt/Decrypt</a>
     </div>
     <div id="content" style="max-width: 775px">
       <h1>Free Online Text Encryption and Decryption</h1>
@@ -94,20 +81,6 @@
 
     <script>
       document.getElementById("encrypt-decrypt").classList.add("current");
-
-      function highlightCurrent(id) {
-        var buttons = document
-          .getElementById("nav")
-          .getElementsByTagName("button");
-        for (var i = 0; i < buttons.length; i++) {
-          buttons[i].classList.remove("current");
-          if (buttons[i].id === id) {
-            buttons[i].classList.add("current");
-          }
-        }
-      }
-
-      highlightCurrent("encrypt-decrypt");
 
       function copyText() {
         var text = document.getElementById("textArea");

@@ -285,3 +285,32 @@ h1 {
 .buttons-container .button-style:last-child {
   margin-right: 0;
 }
+
+.nav-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #00779e;
+  color: #fff;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.4s;
+  width: 80%;
+}
+
+.nav-button:hover {
+  background-color: #317231;
+  color: #fff;
+}
+
+.nav-button.current {
+  background-color: #317231;
+}
+
+@media (min-width: 600px) {
+  .nav-button {
+    width: 30%;
+  }
+}

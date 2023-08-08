@@ -36,33 +36,11 @@
   </head>
   <body>
     <div id="nav">
-      <button class="nav-button" id="home" onclick="window.location.href='/'">
-        Home
-      </button>
-      <button
-        class="nav-button"
-        id="word-counter"
-        onclick="window.location.href='/word-counter'"
-      >
-        Word Counter
-      </button>
-      <button
-        class="nav-button"
-        id="character-count"
-        onclick="highlightCurrent(this.id)"
-      >
-        > Character Counter
-      </button>
-      <button
-        id="case-converter"
-        onclick="window.location.href='/case-converter'"
-      >
-        Case Converter
-      </button>
-      <button id="encrypt-decrypt" onclick="location.href='/encrypt-decrypt'">
-        Text Encrypt/Decrypt
-      </button>
-      <!-- More buttons can be added here -->
+      <a href="/" id="home" class="nav-button">Home</a>
+      <a href="/word-counter"  id="word-counter" class="nav-button">Word Counter</a>
+      <a href="/character-counter" id="character-counter" class="nav-button">Character Counter</a>
+      <a href="/case-converter" id="case-converter" class="nav-button" id="case-converter">Case Converter</a>
+      <a href="/encrypt-decrypt" id="encrypt-decrypt" class="nav-button" id="encrypt-decrypt">Text Encrypt/Decrypt</a>
     </div>
     <div id="content">
       <h1>The Best Character Counter in the World</h1>
@@ -90,6 +68,8 @@
       </p>
     </footer>
     <script>
+      document.getElementById("character-count").classList.add("current");
+
       function countCharacters() {
         var text = document.getElementById("textArea").value;
         var countSpaces = document.getElementById("countSpaces").checked;
@@ -99,8 +79,6 @@
         document.getElementById("charCount").innerHTML =
           "Character Count: " + charCount;
       }
-
-      document.getElementById("character-count").classList.add("current");
 
       window.dataLayer = window.dataLayer || [];
       function gtag() {

@@ -14,10 +14,14 @@ body {
 footer {
   padding: 20px 0;
   text-align: center;
-  font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+footer a {
+  font-weight: bold;
+  color: #0000B8;
 }
 
 a {

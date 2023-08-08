@@ -64,10 +64,14 @@ export const robots = () => {
   return gulp.src("src/robots.txt").pipe(gulp.dest("dist"));
 };
 
+export const icon = () => {
+  return gulp.src("src/brain.png").pipe(gulp.dest("dist"));
+};
+
 export const watch = () => {
   gulp.watch("src/**/*.html", gulp.series(html));
   gulp.watch("src/css/*.css", gulp.series(css));
 };
 
 export const build = gulp.series(html, css);
-export default gulp.series(build, criticalTask, robots, generateSitemap, watch);
+export default gulp.series(build, criticalTask, robots, generateSitemap,icon, watch);

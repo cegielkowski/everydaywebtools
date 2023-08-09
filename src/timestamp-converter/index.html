@@ -1,0 +1,72 @@
+@@include('../components/head-of-file.html')
+<title>UNIX Timestamp Converter - Free Online Tool</title>
+<meta
+  name="description"
+  content="Convert UNIX timestamps to human-readable dates and vice versa using our free online Timestamp Converter tool. Accurate, fast, and easy to use!"
+/>
+<meta
+  name="keywords"
+  content="UNIX Timestamp Converter, Timestamp to Date, Date to Timestamp, Free Online Tool, Time Conversion"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "The Best UNIX Timestamp Converter in the World",
+    "url": "https://www.everydaywebtools.com/timestamp-converter/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+<div id="content" style="max-width: 775px">
+  <h1>The Best UNIX Timestamp Converter in the World</h1>
+  <input
+    type="text"
+    style="
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    "
+    id="inputField"
+    placeholder="Enter UNIX timestamp or Date (yyyy-mm-dd)"
+  />
+  <div class="buttons-container">
+    <button class="button-style" onclick="convertToHuman()">
+      Convert to Date
+    </button>
+    <button class="button-style" onclick="convertToTimestamp()">
+      Convert to Timestamp
+    </button>
+  </div>
+</div>
+@@include('../components/footer.html')
+<script>
+  document.getElementById("timestamp-converter").classList.add("current");
+
+  function convertToHuman() {
+    var input = document.getElementById("inputField").value;
+    // If input is a UNIX timestamp
+    if (!isNaN(input) && Number(input) === parseInt(input, 10)) {
+      var date = new Date(input * 1000);
+      document.getElementById("inputField").value = date
+        .toISOString()
+        .substr(0, 10);
+    }
+  }
+
+  function convertToTimestamp() {
+    var input = document.getElementById("inputField").value;
+    // If input is a date
+    var datePattern = /^\d{4}-\d{2}-\d{2}$/;
+    if (datePattern.test(input)) {
+      var timestamp = new Date(input).getTime() / 1000;
+      document.getElementById("inputField").value = timestamp;
+    }
+  }
+</script>
+@@include('../components/end-of-file.html')

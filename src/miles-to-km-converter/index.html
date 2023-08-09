@@ -1,0 +1,49 @@
+@@include('../components/head-of-file.html')
+<title>Miles to Kilometers Converter - Free Distance Conversion Tool</title>
+<meta
+  name="description"
+  content="Convert miles to kilometers with our free online converter. Simply enter the distance in miles, and get the equivalent distance in kilometers. Ideal for travelers, runners, and anyone who needs to convert distances."
+/>
+<meta
+  name="keywords"
+  content="Miles to Kilometers, Distance Converter, Mile to Km, Conversion Tool"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Online Miles to Kilometers Converter",
+    "url": "https://www.everydaywebtools.com/miles-to-km-converter/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+<div id="content" style="max-width: 775px">
+  <h1>Miles to Kilometers Converter</h1>
+  <label for="milesInput">Enter Miles:</label>
+  <input        style="width: 30%; margin-bottom: 10px"  type="number" id="milesInput" placeholder="Miles" />
+  <p><span id="result" class="conversion-result"></span></p>
+  <div class="buttons-container">
+    <button class="button-style" onclick="convertMilesToKm()">Convert</button>
+  </div>
+</div>
+@@include('../components/footer.html')
+<script>
+  document.getElementById("miles-to-km-converter").classList.add("current");
+
+  function convertMilesToKm() {
+    var miles = document.getElementById("milesInput").value;
+    var km = miles * 1.60934;
+    document.getElementById("result").innerText = miles + " miles is " + km.toFixed(2) + " kilometers.";
+  }
+</script>
+<style>
+  .conversion-result {
+    font-weight: bold;
+    font-size: 18px;
+  }
+</style>
+@@include('../components/end-of-file.html')

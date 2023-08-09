@@ -1,0 +1,50 @@
+@@include('../components/head-of-file.html')
+<title>What is My IP? - Free Online IP Address Finder</title>
+<meta
+  name="description"
+  content="Find out your IP address instantly with our free online tool. Ideal for troubleshooting network issues, VPN testing, and more."
+/>
+<meta
+  name="keywords"
+  content="IP Address, Find IP, IP Finder, Network Tool, VPN Test"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Online IP Address Finder",
+    "url": "https://www.everydaywebtools.com/what-is-my-ip/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+<div id="content" style="max-width: 775px">
+  <h1>What is My IP?</h1>
+  <p>Your IP address is:</p>
+  <p><span style="font-weight: bold; /* Makes the text bolder */
+    font-size: 24px; " id="ipAddress">Fetching...</span></p>
+  <button class="button-style" onclick="getIpAddress()">Refresh</button>
+</div>
+@@include('../components/footer.html')
+<script>
+  document.getElementById("what-is-my-ip").classList.add("current");
+
+  function getIpAddress() {
+    fetch("https://api.ipify.org?format=json")
+      .then((response) => response.json())
+      .then(
+        (data) => (document.getElementById("ipAddress").innerText = data.ip)
+      )
+      .catch(
+        (error) =>
+          (document.getElementById("ipAddress").innerText =
+            "Error fetching IP address")
+      );
+  }
+
+  getIpAddress(); // Call the function on page load
+</script>
+@@include('../components/end-of-file.html')

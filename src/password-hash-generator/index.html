@@ -1,0 +1,99 @@
+@@include('../components/head-of-file.html')
+<title>Password Hash Generator - Free Online Tool</title>
+<meta
+  name="description"
+  content="Generate secure password hashes using our free online Password Hash Generator. Choose from popular hash algorithms like MD5, SHA-1, and more!"
+/>
+<meta
+  name="keywords"
+  content="Password Hash Generator, MD5, SHA-1, Free Online Tool, Hashing, Security"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "The Best Password Hash Generator in the World",
+    "url": "https://www.everydaywebtools.com/password-hash-generator/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+<div id="content" style="max-width: 775px">
+  <h1>The Best Password Hash Generator in the World</h1>
+  <textarea
+    id="textArea"
+    placeholder="Type your password or text here..."
+  ></textarea>
+  <div class="buttons-container">
+    <button class="button-style" onclick="generateHash('md5')">MD5</button>
+    <button class="button-style" onclick="generateHash('sha1')">SHA-1</button>
+    <button class="button-style" onclick="generateHash('sha256')">
+      SHA-256
+    </button>
+  </div>
+  <div class="util-buttons-container">
+    <button class="button-style util-button" onclick="downloadText()">
+      Download Text
+    </button>
+    <button class="button-style util-button" onclick="copyText()">
+      Copy to Clipboard
+    </button>
+    <button class="button-style util-button" onclick="clearText()">
+      Clear
+    </button>
+    <button class="button-style util-button" onclick="undoText()">Undo</button>
+  </div>
+</div>
+@@include('../components/footer.html')
+<script>
+  document.getElementById("password-hash-generator").classList.add("current");
+
+  function generateHash(type) {
+    originalText = document.getElementById("textArea").value; // Save the original text
+    var text = originalText;
+    switch (type) {
+      case "md5":
+        document.getElementById("textArea").value = CryptoJS.MD5(text);
+        break;
+      case "sha1":
+        document.getElementById("textArea").value = CryptoJS.SHA1(text);
+        break;
+      case "sha256":
+        document.getElementById("textArea").value = CryptoJS.SHA256(text);
+        break;
+    }
+  }
+
+  function undoText() {
+    document.getElementById("textArea").value = originalText; // Restore the original text
+  }
+
+  function copyText() {
+    var text = document.getElementById("textArea");
+    text.select();
+    document.execCommand("copy");
+  }
+
+  function clearText() {
+    document.getElementById("textArea").value = "";
+  }
+
+  function downloadText() {
+    var text = document.getElementById("textArea").value;
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", "text.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
+@@include('../components/end-of-file.html')

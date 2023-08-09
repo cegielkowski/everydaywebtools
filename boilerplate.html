@@ -1,0 +1,135 @@
+@@include('../components/head-of-file.html')
+<title>
+  Case Converter - Free Online Tool for Sentence, Title, Upper & Lower
+</title>
+<meta
+  name="description"
+  content="Convert text with our free online case converter: sentence, title, upper, lower cases & more. Download or copy with one click. Easy & efficient!"
+/>
+<meta
+  name="keywords"
+  content="Case Converter, Text Transformation, Free Online Tool, Sentence Case, Title Case, Upper Case, Lower Case"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "The Best Case Converter in the World",
+    "url": "https://www.everydaywebtools.com/case-converter",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+
+<div id="content" style="max-width: 775px">
+  <h1>The Best Case Converter in the World</h1>
+  <textarea id="textArea" placeholder="Type your text here..."></textarea>
+  <div class="buttons-container">
+    <button class="button-style" onclick="toUpper()">Upper</button>
+    <button class="button-style" onclick="toLower()">Lower</button>
+    <button class="button-style" onclick="toInverse()">Inverse</button>
+    <button class="button-style" onclick="toSentence()">Sentence</button>
+    <button class="button-style" onclick="toAlternating()">Alternating</button>
+    <button class="button-style" onclick="toTitle()">Title</button>
+  </div>
+
+  <div class="util-buttons-container">
+    <button class="button-style util-button" onclick="downloadText()">
+      Download Text
+    </button>
+    <button class="button-style util-button" onclick="copyText()">
+      Copy to Clipboard
+    </button>
+    <button class="button-style util-button" onclick="clearText()">
+      Clear
+    </button>
+  </div>
+</div>
+
+@@include('../components/footer.html')
+
+<script>
+  document.getElementById("case-converter").classList.add("current");
+
+  function toLower() {
+    var text = document.getElementById("textArea").value;
+    document.getElementById("textArea").value = text.toLowerCase();
+  }
+
+  function toUpper() {
+    var text = document.getElementById("textArea").value;
+    document.getElementById("textArea").value = text.toUpperCase();
+  }
+
+  function toTitle() {
+    var text = document.getElementById("textArea").value;
+    var words = text.split(" ");
+    for (var i = 0; i < words.length; i++) {
+      words[i] =
+        words[i].charAt(0).toUpperCase() + words[i].slice(1).toLowerCase();
+    }
+    document.getElementById("textArea").value = words.join(" ");
+  }
+
+  function toSentence() {
+    var text = document.getElementById("textArea").value;
+    var sentence = text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+    document.getElementById("textArea").value = sentence;
+  }
+
+  function toAlternating() {
+    var text = document.getElementById("textArea").value;
+    var alternating = "";
+    for (var i = 0; i < text.length; i++) {
+      if (i % 2 == 0) {
+        alternating += text.charAt(i).toLowerCase();
+      } else {
+        alternating += text.charAt(i).toUpperCase();
+      }
+    }
+    document.getElementById("textArea").value = alternating;
+  }
+
+  function toInverse() {
+    var text = document.getElementById("textArea").value;
+    var inverse = "";
+    for (var i = 0; i < text.length; i++) {
+      if (text.charAt(i) === text.charAt(i).toLowerCase()) {
+        inverse += text.charAt(i).toUpperCase();
+      } else {
+        inverse += text.charAt(i).toLowerCase();
+      }
+    }
+    document.getElementById("textArea").value = inverse;
+  }
+
+  function copyText() {
+    var text = document.getElementById("textArea");
+    text.select();
+    document.execCommand("copy");
+  }
+
+  function clearText() {
+    document.getElementById("textArea").value = "";
+  }
+
+  function downloadText() {
+    var text = document.getElementById("textArea").value;
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", "text.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
+
+@@include('../components/end-of-file.html')

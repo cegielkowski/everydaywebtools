@@ -1,0 +1,89 @@
+@@include('../components/head-of-file.html')
+<title>
+  Base64 Encoder & Decoder - Free Online Tool
+</title>
+<meta
+  name="description"
+  content="Encode and decode text using our free online Base64 encoder & decoder tool. Download or copy with one click. Easy, secure & efficient!"
+/>
+<meta
+  name="keywords"
+  content="Base64 Encoder, Base64 Decoder, Free Online Tool, Text Encoding, Text Decoding"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "The Best Base64 Encoder & Decoder in the World",
+    "url": "https://www.everydaywebtools.com/base64-encoder-decoder",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+
+<div id="content" style="max-width: 775px">
+  <h1>The Best Base64 Encoder & Decoder in the World</h1>
+  <textarea id="textArea" placeholder="Type your text here..."></textarea>
+  <div class="buttons-container">
+    <button class="button-style" onclick="encodeText()">Encode</button>
+    <button class="button-style" onclick="decodeText()">Decode</button>
+  </div>
+
+  <div class="util-buttons-container">
+    <button class="button-style util-button" onclick="downloadText()">
+      Download Text
+    </button>
+    <button class="button-style util-button" onclick="copyText()">
+      Copy to Clipboard
+    </button>
+    <button class="button-style util-button" onclick="clearText()">
+      Clear
+    </button>
+  </div>
+</div>
+
+@@include('../components/footer.html')
+
+<script>
+  document.getElementById("base64-encoder-decoder").classList.add("current");
+
+  function encodeText() {
+    var text = document.getElementById("textArea").value;
+    document.getElementById("textArea").value = btoa(text);
+  }
+
+  function decodeText() {
+    var text = document.getElementById("textArea").value;
+    document.getElementById("textArea").value = atob(text);
+  }
+
+  function copyText() {
+    var text = document.getElementById("textArea");
+    text.select();
+    document.execCommand("copy");
+  }
+
+  function clearText() {
+    document.getElementById("textArea").value = "";
+  }
+
+  function downloadText() {
+    var text = document.getElementById("textArea").value;
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", "text.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
+
+@@include('../components/end-of-file.html')

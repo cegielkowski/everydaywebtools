@@ -1,0 +1,98 @@
+@@include('../components/head-of-file.html')
+<title>Lorem Ipsum Generator - Free Placeholder Text Tool</title>
+<meta
+  name="description"
+  content="Create placeholder text with our free Lorem Ipsum Generator. Choose the number of words and generate your custom dummy text. Ideal for designers, developers, and content creators."
+/>
+<meta
+  name="keywords"
+  content="Lorem Ipsum, Placeholder Text, Dummy Text, Text Generator, Design Tool, Development Tool"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "Free Online Lorem Ipsum Generator",
+    "url": "https://www.everydaywebtools.com/lorem-ipsum-generator/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+<div id="content" style="max-width: 775px">
+  <h1>Lorem Ipsum Generator</h1>
+  <p>Choose the number of words for your placeholder text:</p>
+  <label for="numWords">Number of Words:</label>
+  <input type="number" id="numWords" value="150" min="5" max="2000" />
+  <br /><br />
+  <textarea
+    id="loremIpsumArea"
+    readonly
+    style="width: 100%; height: 200px"
+  ></textarea>
+  <div class="buttons-container">
+    <button class="button-style" onclick="generateLoremIpsum()">
+      Generate Text
+    </button>
+  </div>
+  <div class="util-buttons-container">
+    <button class="button-style util-button" onclick="copyText()">Copy</button>
+    <button class="button-style util-button" onclick="downloadText()">
+      Download
+    </button>
+    <button class="button-style util-button" onclick="clearText()">
+      Clear
+    </button>
+  </div>
+</div>
+@@include('../components/footer.html')
+<script>
+  document.getElementById("lorem-ipsum-generator").classList.add("current");
+
+  function generateLoremIpsumText(numWords) {
+    // Sample Lorem Ipsum text
+    var lorem =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+    var words = lorem.split(" ");
+    var result = [];
+
+    for (var i = 0; i < numWords; i++) {
+      result.push(words[i % words.length]);
+    }
+
+    return result.join(" "); // Return the generated text
+  }
+
+  function generateLoremIpsum() {
+    var numWords = parseInt(document.getElementById("numWords").value, 10);
+    var loremIpsumText = generateLoremIpsumText(numWords);
+    document.getElementById("loremIpsumArea").value = loremIpsumText; // Set the textarea's value
+  }
+
+  function copyText() {
+    var text = document.getElementById("loremIpsumArea");
+    text.select();
+    document.execCommand("copy");
+  }
+
+  function clearText() {
+    document.getElementById("loremIpsumArea").value = "";
+  }
+
+  function downloadText() {
+    var text = document.getElementById("loremIpsumArea").value;
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", "lorem-ipsum.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
+@@include('../components/end-of-file.html')

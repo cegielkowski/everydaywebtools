@@ -1,0 +1,100 @@
+@@include('../components/head-of-file.html')
+<title>Password Generator - Complex & Safe Password Creation Tool</title>
+<meta
+  name="description"
+  content="Generate complex and safe passwords using our free online Password Generator. Customize length, character types, and more for enhanced security!"
+/>
+<meta
+  name="keywords"
+  content="Password Generator, Strong Password, Complex Password, Password Security, Free Online Tool"
+/>
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "WebApplication",
+    "name": "The Best Password Generator in the World",
+    "url": "https://www.everydaywebtools.com/password-generator/",
+    "applicationCategory": "Utility",
+    "operatingSystem": "All"
+  }
+</script>
+@@include('../components/gtag.html')
+@@include('../components/css-and-headbody.html')
+@@include('../components/nav.html')
+<div id="content" style="max-width: 775px">
+  <h1>The Best Password Generator in the World</h1>
+  <p>Choose your desired password settings:</p>
+  <label for="length">Password Length:</label>
+  <input type="number" id="length" value="12" min="8" max="128" />
+  <label for="includeNumbers">Include Numbers:</label>
+  <input type="checkbox" id="includeNumbers" checked />
+  <label for="includeSymbols">Include Symbols:</label>
+  <input type="checkbox" id="includeSymbols" checked />
+  <input
+    type="text"
+    id="password"
+    readonly
+    style="
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 10px;
+    "
+  />
+  <button class="button-style" onclick="generatePassword()">
+    Generate Password
+  </button>
+  <div class="util-buttons-container">
+    <button class="button-style util-button" onclick="downloadText()">Download</button>
+    <button class="button-style util-button" onclick="copyText()">Copy</button>
+    <button class="button-style util-button" onclick="clearText()">Clear</button>
+  </div>
+</div>
+@@include('../components/footer.html')
+<script>
+  document.getElementById("password-generator").classList.add("current");
+
+  function generatePassword() {
+    var length = document.getElementById("length").value;
+    var includeNumbers = document.getElementById("includeNumbers").checked;
+    var includeSymbols = document.getElementById("includeSymbols").checked;
+    var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (includeNumbers) charset += "0123456789";
+    if (includeSymbols) charset += "!@#$%^&*()-_=+";
+    var password = "";
+    for (var i = 0; i < length; i++) {
+      var randomChar = charset.charAt(
+        Math.floor(Math.random() * charset.length)
+      );
+      password += randomChar;
+    }
+    document.getElementById("password").value = password;
+  }
+
+  function copyText() {
+    var text = document.getElementById("password");
+    text.select();
+    document.execCommand("copy");
+  }
+
+  function clearText() {
+    document.getElementById("password").value = "";
+  }
+
+  function downloadText() {
+    var text = document.getElementById("password").value;
+    var element = document.createElement("a");
+    element.setAttribute(
+      "href",
+      "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+    );
+    element.setAttribute("download", "password.txt");
+    element.style.display = "none";
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+</script>
+@@include('../components/end-of-file.html')
